@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Server.js",
-    "dev": "supervisor Server.js",
+    "start": "supervisor Server.js",
     "start:prod": "NODE_ENV='production' supervisor Server.js",
     "debuger": "ndb Server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
