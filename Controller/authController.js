@@ -188,7 +188,7 @@ exports.forgotPassword = async function (req, res, next) {
   const resetToken = user.createPasswordResetToken(); // we are modify the data we need to save to the database
   await user.save({ validateBeforeSave: false }); // when we saving passwordResetToken , passwordResetExpires := we dont need validation
 
-  console.log(user);
+
 
   try {
     const resetURL = `${req.protocol}://${req.get(
@@ -221,7 +221,7 @@ exports.resetPassword = catchAsync(async function (req, res, next) {
     passwordResetToken: hashedToken,
     passwordResetExpires: { $gte: Date.now() },
   });
-  console.log(user);
+  
   if (!user) {
     return next(new AppError(`Your Token is expired !`, 400));
   }
