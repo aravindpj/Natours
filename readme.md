@@ -3,7 +3,7 @@
 Built using modern technologies : node JS,express,mongoDB,mongoose
 
 # Overview 
-The purpose of the web applicatin , who love to travel the world
+The purpose of the web application, who love to travel the world
 The application to allows to book tour pakages
 Find great places on the earth
 
