@@ -52,6 +52,7 @@ Find great places on the earth
 # Installation
 
 # Install project with npm
+- You can fork the app or you can git-clone the app into your local machine. 
 ```bash
  $ npm i
  set your env variables
