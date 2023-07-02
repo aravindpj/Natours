@@ -1,4 +1,4 @@
-# Natours Application
+# Tour booking web Application
 
 Built using modern technologies : node JS,express,mongoDB,mongoose
 
