@@ -5,11 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "start": "supervisor Server.js",
-=======
     "server": "nodemon Server.js",
->>>>>>> 909db374b1c147e050f709eca32680d307125c7a
     "start:prod": "NODE_ENV='production' supervisor Server.js",
     "debuger": "ndb Server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
