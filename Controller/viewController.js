@@ -52,6 +52,12 @@ exports.getLoginForm = function (req, res) {
   });
 };
 
+exports.getSignupForm=function(req,res){
+  res.status(200).render('signup', {
+    title: 'Create new Account',
+  });
+}
+
 exports.getMyBookedTours=async function(req,res){
    // Find all booking
    const bookings=await Booking.find({user:req.user.id})

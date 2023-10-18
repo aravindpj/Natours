@@ -6,7 +6,7 @@ export const displayMap = function (locations) {
   let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/aravind1245/clcpx5imp005y14let1zsnffl',
-    scrollZoom: false,
+    scrollZoom:false
   });
 
   const bounds = new mapboxgl.LngLatBounds();
@@ -27,7 +27,7 @@ export const displayMap = function (locations) {
     //Adding Popup
     new mapboxgl.Popup({ offset: 30 })
       .setLngLat(loc.coordinates)
-      .setHTML(`<p> Day ${loc.day}: ${loc.description}`)
+      .setHTML(`<p> Day ${loc.day}: ${loc.description}</p>`)
       .addTo(map);
 
     //Extend map bound to include current location
