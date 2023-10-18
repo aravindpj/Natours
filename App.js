@@ -11,7 +11,7 @@ const mongoSantize=require('express-mongo-sanitize')
 const xss=require('xss-clean')
 const hpp=require('hpp')
 const cookieParser = require('cookie-parser')
-const compression=require('compression')
+// const compression=require('compression')
 
 const moragn=require('morgan')
 const tourRouter=require('./Router/toursRouter')
@@ -65,7 +65,7 @@ const limiter=rateLimit({
 // using exprss-rate-limit middleware
 app.use('/api',limiter) // mention (/api) means it is applying starting with this url
 
-app.use(compression())
+// app.use(compression())
 
 app.use((req, res, next) => {
   req.requestedTime = new Date().toISOString(); 
