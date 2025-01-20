@@ -39,10 +39,13 @@ const createSendToken = (user, statusCode, res) => {
 
 //signup
 exports.Signup = catchAsync(async function (req, res, next) {
+  console.log(
+    "API HIT",req.body
+  )
   const newUser = await User.create(req.body);
   // send email to new user
   const url=`${req.protocol}://${req.get('host')}/me`
-   await new Email(newUser,url).sendWelcome()
+  //  await new Email(newUser,url).sendWelcome()
   //signin new jwt token
   createSendToken(newUser, 201, res);
 });

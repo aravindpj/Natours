@@ -6,7 +6,7 @@ export const signup = async function (data) {
     try {
       const response = await axios({
         method: 'POST',
-        url: `http://localhost:7000/api/v1/users/signup`,
+        url: `http://localhost:4000/api/v1/users/signup`,
         data:data
       });
       if (response.data.status === 'success') {
