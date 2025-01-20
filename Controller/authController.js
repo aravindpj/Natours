@@ -39,15 +39,6 @@ const createSendToken = (user, statusCode, res) => {
 
 //signup
 exports.Signup = catchAsync(async function (req, res, next) {
-  //   const newUser = await User.create({
-  //     name: req.body.name,
-  //     email: req.body.email,
-  //     password: req.body.password,
-  //     confirmPassword: req.body.confirmPassword,
-  //     passwordChangedAt: req.body.passwordChangedAt,
-  //     role: req.user.role,
-  //   });
-
   const newUser = await User.create(req.body);
   // send email to new user
   const url=`${req.protocol}://${req.get('host')}/me`
@@ -117,7 +108,6 @@ exports.protect = catchAsync(async function (req, res, next) {
   }
 
   // 4) check if user chenged password after token issued
-  //ടോക്കൺ നൽകിയതിന് ശേഷം ഉപയോക്താവ് പാസ്‌വേഡ് മാറ്റുന്നുണ്ടോയെന്ന് പരിശോധിക്കുക
   if (currentUser.changePasswordAfter(decoded.iat)) {
     return next(
       new AppError(
@@ -150,7 +140,6 @@ exports.isLoggedin = async function (req, res, next) {
       }
 
       // 3) check if user chenged password after token issued
-      //ടോക്കൺ നൽകിയതിന് ശേഷം ഉപയോക്താവ് പാസ്‌വേഡ് മാറ്റുന്നുണ്ടോയെന്ന് പരിശോധിക്കുക
       if (currentUser.changePasswordAfter(decoded.iat)) {
         return next();
       }
