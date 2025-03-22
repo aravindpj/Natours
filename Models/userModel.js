@@ -85,7 +85,7 @@ userSchema.methods.correctPassword = async function (
   return await bcrypt.compare(currentPassword, userPassword);
 };
 
-//ടോക്കൺ നൽകിയതിന് ശേഷം ഉപയോക്താവ് പാസ്‌വേഡ് മാറ്റുന്നുണ്ടോയെന്ന് പരിശോധിക്കുക
+//Check if the user changes the password after issuing the token
 userSchema.methods.changePasswordAfter=function(JWTtimestamp){
     if(this.passwordChangedAt){
         const passwordCreatedAt=parseInt(this.passwordChangedAt.getTime()/1000)
