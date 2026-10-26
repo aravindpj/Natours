@@ -5,12 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node api.js && supervisor Server.js",
+    "start": "node init && supervisor Server.js",
     "server": "nodemon Server.js",
-    "start:prod": "NODE_ENV='production' supervisor Server.js",
+    "start:prod": "node init && NODE_ENV='production' supervisor Server.js",
     "debuger": "ndb Server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "build:js": "node init && parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "author": "aravind pj",
   "license": "ISC",
